@@ -130,7 +130,7 @@ cv.imshow('rotaed Harry2', img_rotate2)
 esc()
 
 '''scale + rolation + translation = similarity transform相似变换'''
-cv.getRotaitonMatrix2D((img.shape[1]/2, img.shape[0]/2), 30, 0.5)
+rotation_mat = cv.getRotationMatrix2D((img.shape[1]/2, img.shape[0]/2), 30, 0.5)
 img_rotate = cv.warpAffine(img, rotation_mat, (img.shape[1], img.shape[0]))
 cv.imshow('rotaed Harry', img_rotate)
 esc()
@@ -146,7 +146,7 @@ cv.imshow('Affine Harry', dst)
 esc()
 
 '''perspective transform 投影（透视）变换'''
-def random_warp(img, row, col):
+def random_warp(img):
     height, width, channels = img.shape
 
     #warp:
@@ -163,6 +163,24 @@ def random_warp(img, row, col):
     x4 = rd.randint(-random_margin, random_margin)
     y4 = rd.randint(height-random_margin-1, height-1)
 
+    dx1 = rd.randint(-random_margin, random_margin)
+    dy1 = rd.randint(-random_margin, random_margin)
+    dx2 = rd.randint(width-random_margin-1, width-1)
+    dy2 = rd.randint(-random_margin, random_margin)
+    dx3 = rd.randint(width-random_margin-1, width-1)
+    dy3 = rd.randint(height-random_margin-1, height-1)
+    dx4 = rd.randint(-random_margin, random_margin)
+    dy4 = rd.randint(height-random_margin-1, height-1)
+
+    pts1 = np.float32([[x1, y1], [x2, y2], [x3, y3], [x4, y4]])
+    pts2 = np.float32([[dx1,dy1], [dx2,dy2], [dx3,dy3], [dx4, dy4]])
+    M_warp = cv.getPerspectiveTransform(pts1, pts2)
+    img_warp = cv.warpPerspective(img, M_warp, (width, height))
+    return M_warp, img_warp
+
+M_warp, img_warp = random_warp(img)
+cv.imshow('Harry_warp', img_warp)
+esc()
 
 
 
