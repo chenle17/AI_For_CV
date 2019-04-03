@@ -8,9 +8,12 @@ def random_change_color(img):
     sita = random.randint(-180,180)
     img_yuv = cv.cvtColor(img, cv.COLOR_BGR2YUV)
     shape = img_yuv.shape
+    #####change image hue
+    #1----U
     img_yuv[:,:int(shape[1]/2),1] = \
         math.cos(math.radians(sita)) * img_yuv[:,:int(shape[1]/2),1] + \
         math.sin(math.radians(sita)) * img_yuv[:,:int(shape[1]/2),1]
+    #2----V
     img_yuv[:,:int(shape[1]/2),2] = \
         math.cos(math.radians(sita)) * img_yuv[:,:int(shape[1]/2),2] - \
         math.sin(math.radians(sita)) * img_yuv[:,:int(shape[1]/2),2]
