@@ -6,4 +6,4 @@
 
 ## Lintcode/leetCode
   **completed：**
-> **Beginning:** 627
+> **Beginning:** 627、13
