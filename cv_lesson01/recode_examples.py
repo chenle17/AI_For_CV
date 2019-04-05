@@ -19,7 +19,7 @@ def showImgInfo(filename,flags=1):
     print('imgt_dtype: ', img.dtype)
     return img
 
-filename = "/home/ubuntu/Downloads/Learn_CV/CV_lesson01_Assignments/img/0_0.jpg"
+filename = "/home/ubuntu/Downloads/Learn_CV/cv_lesson01/img/0_0.jpg"
 img_gray = showImgInfo(filename,0)
 cv.imshow('HarryPoter_gray',img_gray)
 img = showImgInfo(filename)

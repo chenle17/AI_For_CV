@@ -16,8 +16,8 @@ def img_augmentation(crop,color_shift,rotation,random_margin,aug_size):
     :param aug_size: int, >0
     :return:None
     '''
-    img_dir = "/home/ubuntu/Downloads/Learn_CV/CV_lesson01_Assignments/img"
-    img_save = "/home/ubuntu/Downloads/Learn_CV/CV_lesson01_Assignments/img_aug"
+    img_dir = "/home/ubuntu/Downloads/Learn_CV/cv_lesson01/img"
+    img_save = "/home/ubuntu/Downloads/Learn_CV/cv_lesson01/img_aug"
     imgs = os.listdir(img_dir)
     # imgs = [os.path.join(img_dir, img) for img in imgs]
     for img_name in imgs:

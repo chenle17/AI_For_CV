@@ -28,7 +28,7 @@ def esc():
         cv.destroyAllWindows()
 
 
-filename = '/home/ubuntu/Downloads/Learn_CV/CV_lesson01_Assignments/img/ThereIsSomethingAboutMary_013959520_00000036.png'
+filename = '/home/ubuntu/Downloads/Learn_CV/cv_lesson01/img/ThereIsSomethingAboutMary_013959520_00000036.png'
 img = cv.imread(filename)
 random_change_color(img)
 
