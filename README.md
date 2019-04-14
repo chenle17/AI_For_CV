@@ -5,10 +5,9 @@
   > original images in folder *img*, augmented images in folder *img_aug*  
     
   **Lesson 2**  
-  > Only completed the median blur, other to be continued
+  > recode、median blur、ransacMatching
   ### TODO
-  1, Pseudo Code: ransacMatching  
-  2, Classical projects
+  1, Classical projects
 
 ## Lintcode/leetCode
   **completed：**
