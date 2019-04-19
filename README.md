@@ -10,6 +10,6 @@
   1, Classical projects
 
 ## Lintcode/leetCode
-  **completed：**
-> **Beginning:** 627、13、200、415、460、458、585、
+  **completed：**  
+> 627、13、200、415、460、458、585、447、428、45
   
