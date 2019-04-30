@@ -3,7 +3,7 @@ import os
 import cv2 as cv
 import numpy as np
 import random as rd
-
+from cv_lesson01.config import *
 
 def img_augmentation(crop,color_shift,rotation,random_margin,aug_size):
     '''
@@ -16,8 +16,8 @@ def img_augmentation(crop,color_shift,rotation,random_margin,aug_size):
     :param aug_size: int, >0
     :return:None
     '''
-    img_dir = "/home/ubuntu/Downloads/Learn_CV/cv_lesson01/img"
-    img_save = "/home/ubuntu/Downloads/Learn_CV/cv_lesson01/img_aug"
+    img_dir = INPUT_IMG_DIR
+    img_save = OUTPUT_IMG_DIR
     imgs = os.listdir(img_dir)
     # imgs = [os.path.join(img_dir, img) for img in imgs]
     for img_name in imgs:
@@ -47,7 +47,7 @@ def img_augmentation(crop,color_shift,rotation,random_margin,aug_size):
                 B[B >= lim] = (B[B >= lim] + b_rand).astype(img.dtype)
                 B[B < lim] = 0
 
-            g_rand = rd.randint(-50, -50)
+            g_rand = rd.randint(-color_shift, -color_shift)
             if g_rand == 0:
                 pass
             elif g_rand > 0:
@@ -59,7 +59,7 @@ def img_augmentation(crop,color_shift,rotation,random_margin,aug_size):
                 G[G >= lim] = (G[G >= lim] + g_rand).astype(img.dtype)
                 G[G < lim] = 0
 
-            r_rand = rd.randint(-50, -50)
+            r_rand = rd.randint(-color_shift, -color_shift)
             if r_rand == 0:
                 pass
             elif r_rand > 0:
