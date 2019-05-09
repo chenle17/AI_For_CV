@@ -33,3 +33,26 @@ class Solution:
             n = n // 2
 
         return ans % b
+
+    def fastPower_(self, a, b, n):
+        '''
+        递归版本
+
+        :param a:
+        :param b:
+        :param n:
+        :return:
+        '''
+        # write your code here
+
+        if n == 0:
+            return 1 % b
+
+        if n % 2 == 1:
+            n //= 2
+            tmp = self.fastPower_(a, b, n)
+            return tmp * tmp * a % b
+        else:
+            n //= 2
+            tmp = self.fastPower_(a, b, n)
+            return tmp * tmp % b
