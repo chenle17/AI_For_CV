@@ -50,10 +50,36 @@ class Solution:
 class linked_list:
     def __init__(self, head=None):
         self.head = head
+        self.size = 0
         self.end = None
+        if head:
+            self.size += 1
+            while head.next:
+                self.size += 1
+                head = head.next
+            self.end = head
+
 
     def add(self, node):
-        if self.head:
+        if self.end:
+            self.end.next = node
+            self.size += 1
+            while node.next:
+                self.size += 1
+                node = node.next
             self.end = node
         else:
             self.head = node
+            self.size += 1
+            while node.next:
+                self.size += 1
+                node = node.next
+            self.end = node
+
+    def get_middle(self):
+        if not self.end:
+            return
+        node = self.head
+        for _ in range(self.size - 1 // 2):
+            node = node.next
+        return node
