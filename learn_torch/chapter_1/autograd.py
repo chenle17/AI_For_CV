@@ -20,9 +20,18 @@ def tensor():
 
     print(r'-----------.requires_grad_(...)  改变属性')
     a = torch.randn(2, 2)
+    print(a)
     print(a.requires_grad)
     a = ((a * 3) / (a - 1))
+    print(a)
     print(a.requires_grad)
+    a.requires_grad_(True)
+    print(a.requires_grad)
+    print(a.grad_fn)
+    b = (a * a).sum()
+    print(b)
+    print(b.requires_grad)
+    print(b.grad_fn)
 
 if __name__ == '__main__':
     print('-----------------------------------tensor---------')
