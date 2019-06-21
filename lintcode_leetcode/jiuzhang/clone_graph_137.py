@@ -53,7 +53,7 @@ class Solution:
 
     # 1. 找到所有点
     def getNones(self, node):
-        # 把输入点放入双向队列
+        # 把输入点放入双向队列，输入必须可迭代，如[]
         q = collections.deque([node])
         # 使用set存放所有点
         result = set([node])
