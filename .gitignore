@@ -1,4 +1,5 @@
 **/*.pdf
 **/*.h5
 **/events.out.tfevents*
+**/exam_for_offer/*
 
