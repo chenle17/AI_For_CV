@@ -55,7 +55,7 @@ class Solution:
             for next_node in node.neighbors:
                 indegree[next_node] += 1
 
-        # 统计入度为1节点
+        # 统计入度为0节点
         dq = deque()
         for k, v in indegree.items():
             if v == 0:
